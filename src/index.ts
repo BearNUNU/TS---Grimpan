@@ -1,4 +1,5 @@
-import g1 from "./grimpan.js";
-import g2 from "./grimpan.js";
+import Grimpan from './grimpan'
 
-console.log(g1 === g2); // true 자바스크립트 모듈은 import된 모듈이 동일한 인스턴스를 공유한다.(싱글턴 패턴)
+console.log(Grimpan.getInstance() === Grimpan.getInstance()) // true
+
+// 싱클턴은 외부에서 접근 가능하며, 객체가 단일로 생성되게 해야 한다.
