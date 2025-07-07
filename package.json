@@ -1,0 +1,15 @@
+{
+  "name": "ts---grimpan",
+  "version": "1.0.0",
+  "description": "디자인 패턴 학습을 위한 그림판 연습",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.8.3"
+  }
+}
