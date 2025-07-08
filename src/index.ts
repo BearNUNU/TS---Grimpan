@@ -1,5 +1,19 @@
+import ChromeGrimpan from './ChromeGrimpan'
 import Grimpan from './grimpan'
+import IEGrimpan from './IEGrimpan'
 
-console.log(Grimpan.getInstance() === Grimpan.getInstance()) // true
+function gripmpanFactory(type: string) {
+  //simple factory
+  if (type === 'ie') {
+    return IEGrimpan.getInstance()
+  } else if (type === 'chrome') {
+    return ChromeGrimpan.getInstance()
+  } else {
+    throw new Error('Unsupported browser type')
+  }
+}
 
-// 싱클턴은 외부에서 접근 가능하며, 객체가 단일로 생성되게 해야 한다.
+function main() {
+  gripmpanFactory('ie')
+  gripmpanFactory('chrome')
+}
