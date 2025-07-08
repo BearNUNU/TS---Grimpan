@@ -1,15 +1,11 @@
 // let instance: Grimpan | null = null;
+import Grimpan from './AbstractGrimpan'
 
-class ChromeGrimpan {
-  private static instance: ChromeGrimpan
-  constructor(canvas: HTMLElement | null) {
-    if (!canvas || !(canvas instanceof HTMLElement)) {
-      throw new Error('Invalid canvas element provided.')
-    }
-  }
+class ChromeGrimpan extends Grimpan {
+  protected static override instance: Grimpan
   initialize() {}
   initializeCanvas() {}
-  static getInstance() {
+  static override getInstance() {
     if (!this.instance) {
       this.instance = new ChromeGrimpan(document.querySelector('canvas'))
     }

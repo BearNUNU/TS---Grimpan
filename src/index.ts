@@ -1,6 +1,19 @@
 import ChromeGrimpan from './ChromeGrimpan'
 import Grimpan from './grimpan'
 import IEGrimpan from './IEGrimpan'
+import AbstractGrimpanFactory from './AbstractGrimpanFactory'
+
+class ChromeGrimpanFactory extends AbstractGrimpanFactory {
+  override createGrimpan(): Grimpan {
+    return ChromeGrimpan.getInstance()
+  }
+}
+
+class IEGrimpanFactory extends AbstractGrimpanFactory {
+  override createGrimpan(): Grimpan {
+    return IEGrimpan.getInstance()
+  }
+}
 
 function gripmpanFactory(type: string) {
   //simple factory
@@ -14,6 +27,5 @@ function gripmpanFactory(type: string) {
 }
 
 function main() {
-  gripmpanFactory('ie')
-  gripmpanFactory('chrome')
+  const grimpan = new ChromeGrimpanFactory.createGrimpan()
 }
