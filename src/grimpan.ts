@@ -10,7 +10,7 @@ class Grimpan {
   initialize() {}
   initializeCanvas() {}
   static getInstance() {
-    if (this.instance) {
+    if (!this.instance) {
       this.instance = new Grimpan(document.querySelector('canvas'))
     }
     return this.instance
