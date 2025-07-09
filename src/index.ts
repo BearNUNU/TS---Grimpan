@@ -4,28 +4,17 @@ import IEGrimpan from './IEGrimpan'
 import AbstractGrimpanFactory from './AbstractGrimpanFactory'
 
 class ChromeGrimpanFactory extends AbstractGrimpanFactory {
-  override createGrimpan(): Grimpan {
+  static override createGrimpan() {
     return ChromeGrimpan.getInstance()
   }
 }
 
 class IEGrimpanFactory extends AbstractGrimpanFactory {
-  override createGrimpan(): Grimpan {
+  static override createGrimpan() {
     return IEGrimpan.getInstance()
-  }
-}
-
-function gripmpanFactory(type: string) {
-  //simple factory
-  if (type === 'ie') {
-    return IEGrimpan.getInstance()
-  } else if (type === 'chrome') {
-    return ChromeGrimpan.getInstance()
-  } else {
-    throw new Error('Unsupported browser type')
   }
 }
 
 function main() {
-  const grimpan = new ChromeGrimpanFactory.createGrimpan()
+  const grimpan = ChromeGrimpanFactory.createGrimpan()
 }
